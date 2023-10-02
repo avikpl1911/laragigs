@@ -20,6 +20,8 @@ Route::get('/', [ListingController::class , 'index']);
 
 Route::get('/listings/create',[ListingController::class,'create'])->middleware('auth');
 
+
+
 Route::get('/listings/{listing}',[ListingController::class,'show']);
 
 Route::post('/listings',[ListingController::class,'store'])->middleware('auth');
@@ -40,6 +42,7 @@ Route::get('/login',[UserController::class,'login'])->middleware('guest');
 
 Route::post('/users/login',[UserController::class,'userlogin'])->name('login')->middleware('guest');
 
+Route::get('/listings/manage',[ListingController::class,'manage']);
 
 // Route::get('/hello',function(){
 //     return response('<h1>Hello World</h1>',200)
